@@ -14,7 +14,7 @@ public class fifthHomeWorkTests {
 
         // act
         $(".vdp-datepicker").click();
-        $(".cell.day.weekend.sat").click();
+        $(".cell.day.weekend.sat").hover();
         sleep(5000);
 
         //assert
@@ -35,10 +35,10 @@ public class fifthHomeWorkTests {
         $("#sel").$(Selectors.byText("1989")).click();
         sleep(2000);
 
-        $(".module__inputs").$(Selectors.byText("Japanese")).click();
+        $(Selectors.byText("Japanese")).click();
         sleep(2000);
 
-        $(".module__inputs").$(Selectors.byText("Russian")).click();
+        $(Selectors.byText("Russian")).click();
         sleep(2000);
 
         $("input[name=last__name]").append("-сан");
