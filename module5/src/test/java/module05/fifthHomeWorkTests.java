@@ -14,7 +14,7 @@ public class fifthHomeWorkTests {
 
         // act
         $(".vdp-datepicker").click();
-        $(".cell.day.weekend.sat").hover();
+        $(Selectors.byText("13")).hover();
         sleep(5000);
 
         //assert
