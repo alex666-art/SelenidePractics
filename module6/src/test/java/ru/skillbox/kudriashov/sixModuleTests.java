@@ -5,6 +5,8 @@ import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -15,7 +17,7 @@ public class SixModuleTests {
     public void internetShopMenuVisibleTest() {
         // arrange
         open("http://intershop2.skillbox.ru/");
-        Configuration.timeout = 1000;
+        Configuration.timeout = 500;
 
         // act
         // assert
@@ -27,22 +29,22 @@ public class SixModuleTests {
     public void internetShopFooterEmailTest() {
         // arrange
         open("http://intershop2.skillbox.ru/");
-        Configuration.timeout = 1000;
+        Configuration.timeout = 500;
         // act
         $("html").sendKeys(Keys.END);
 
         // assert
-        $(".banner-text").shouldHave(text("skillbox@skillbox.ru"));
+        $(".banner-text").shouldHave(text("skillbox@skillbox.ru"), Duration.ofSeconds(1));
     }
 
     @Test
     public void myAccountEmailTest() {
         // arrange
         open("http://intershop2.skillbox.ru/my-account/");
-        Configuration.timeout = 1000;
+        Configuration.timeout = 500;
         // act
-        $("#username").setValue("skillbox@skillbox.ru");
-        $("#username").sendKeys(Keys.ENTER);
+        $("#username").setValue("skillbox@skillbox.ru").pressEnter();
+
         // assert
         $("#username").shouldHave(value("@"));
         $("#password").should(empty);
@@ -53,7 +55,7 @@ public class SixModuleTests {
     public void myAccountSubmitButtonTest() {
         // arrange
         open("http://intershop2.skillbox.ru/my-account/");
-        Configuration.timeout = 1000;
+        Configuration.timeout = 500;
         // act
         $(".custom-register-button").hover();
 
@@ -72,7 +74,7 @@ public class SixModuleTests {
     public void myAccountHiddenElementTest() {
         // arrange
         open("http://intershop2.skillbox.ru/my-account/");
-        Configuration.timeout = 1000;
+        Configuration.timeout = 500;
         // act
         // assert
         $("input[name=_wp_http_referer]").should(exist);
