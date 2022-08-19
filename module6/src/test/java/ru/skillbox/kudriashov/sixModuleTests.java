@@ -1,19 +1,15 @@
 package ru.skillbox.kudriashov;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-
-import java.nio.channels.Selector;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class sixModuleTests {
+public class SixModuleTests {
 
     @Test
     public void internetShopMenuVisibleTest() {
@@ -23,7 +19,7 @@ public class sixModuleTests {
 
         // act
         // assert
-        $("#menu-item-31").shouldBe(visible);
+        $(withText("Оформление заказа")).shouldBe(visible);
 
     }
 
@@ -36,7 +32,7 @@ public class sixModuleTests {
         $("html").sendKeys(Keys.END);
 
         // assert
-        $(".text-5-value", 1).shouldHave(text("skillbox@skillbox.ru"));
+        $(".banner-text").shouldHave(text("skillbox@skillbox.ru"));
     }
 
     @Test
@@ -50,7 +46,7 @@ public class sixModuleTests {
         // assert
         $("#username").shouldHave(value("@"));
         $("#password").should(empty);
-        $("#rememberme").shouldBe(disabled);
+        $("#rememberme").shouldBe(disabled).shouldNotBe(checked);
     }
 
     @Test
@@ -89,10 +85,10 @@ public class sixModuleTests {
         open("http://intershop2.skillbox.ru/");
 
         // act
-        $("input").setValue("APPLE").sendKeys(Keys.ENTER);
+        $("input").setValue("APPLE").pressEnter();
 
         // assert
-        $(".products").shouldHave(text("Watch"));
+        $(".products").should(or("Разные товары в поисковой выдаче Watch или iPad", text("iPad"), text("Watch")));
     }
 
     @Test
@@ -101,8 +97,8 @@ public class sixModuleTests {
         open("http://intershop2.skillbox.ru/");
         Configuration.timeout = 500;
         // act
-        $("html").sendKeys(Keys.END);
+
         // assert
-        $("#ak-top").shouldBe(visible);
+        $("#ak-top").scrollTo().shouldBe(visible);
     }
 }
