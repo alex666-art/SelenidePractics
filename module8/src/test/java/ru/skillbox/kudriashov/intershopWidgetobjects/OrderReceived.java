@@ -6,12 +6,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class OrderReceived {
 
-    SelenideElement orderHeader = $(".post-title");
-    SelenideElement productName = $(".product-name a");
-    SelenideElement productCount = $(".product-quantity");
-    SelenideElement emailHeader = $(".email");
-    SelenideElement emailCheckHeader = $(".woocommerce-customer-details--email");
-    SelenideElement cityHeader = $("address");
-    SelenideElement paymentMethodHeader = $("td", 3);
-    SelenideElement totalAmount = $(".amount", 3);
+    public SelenideElement orderHeader = $(".post-title");
+    public SelenideElement productName = $(".product-name a");
+    public SelenideElement productCount = $(".product-quantity");
+    public SelenideElement emailHeader = $(".email");
+    public SelenideElement emailCheckHeader = $(".woocommerce-customer-details--email");
+    public SelenideElement cityHeader = $("address");
+    public SelenideElement paymentMethodHeader = $("td", 3);
+    public SelenideElement totalAmount = $(".amount", 3);
 }

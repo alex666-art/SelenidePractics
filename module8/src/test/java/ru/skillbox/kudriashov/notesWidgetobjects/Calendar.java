@@ -7,9 +7,9 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class Calendar {
 
-    SelenideElement todayDate = $(".today");
+    public SelenideElement todayDate = $(".today");
 
-    public void getYesterdayNotesCount() {
+    public void checkYesterdayNotesCount() {
         todayDate.preceding(0).shouldHave(text("1"));
     }
 }

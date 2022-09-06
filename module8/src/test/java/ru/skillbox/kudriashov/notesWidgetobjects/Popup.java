@@ -7,11 +7,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class Popup {
     SelenideElement headerInput = $(".popup__content .baseInput__field");
     SelenideElement descriptionInput = $(".popup__content .baseTextarea__text");
-    SelenideElement addNoteButtonPopup = $(".popup__baseButton");
+    SelenideElement addNoteButton = $(".popup__baseButton");
 
-    public void addNote(String header, String description) {
-        headerInput.setValue(header);
+    public void addNote(String title, String description) {
+        headerInput.setValue(title);
         descriptionInput.setValue(description);
-        addNoteButtonPopup.click();
+        addNoteButton.click();
     }
 }
