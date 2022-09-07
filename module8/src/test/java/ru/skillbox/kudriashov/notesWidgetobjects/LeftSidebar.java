@@ -1,15 +1,16 @@
 package ru.skillbox.kudriashov.notesWidgetobjects;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+
 
 public class LeftSidebar {
 
-    ElementsCollection leftPanelButton =  $$(".theLayout__menuItem");
+    SelenideElement leftPanelButton =  $(".theLayout__menuBody");
 
-    public void goToStatisticsPage() {
-        leftPanelButton.last().click(); // клик по кнопке "статистика" в левой панели
+    public void clickLeftPanelButton(String name) {
+        leftPanelButton.find(byText(name)).click();
     }
 }

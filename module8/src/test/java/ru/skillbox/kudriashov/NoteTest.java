@@ -39,7 +39,7 @@ public class NoteTest {
         new RightSidebarNotesList().notesList.first().shouldHave(text(secondHeader));
 
         // act
-        new LeftSidebar().goToStatisticsPage();
+        new LeftSidebar().clickLeftPanelButton("Статистика");
 
         // assert
         new Calendar().todayDate.shouldHave(text(actualNoteCount));

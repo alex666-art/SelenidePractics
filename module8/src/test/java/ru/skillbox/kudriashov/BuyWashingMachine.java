@@ -1,15 +1,10 @@
 package ru.skillbox.kudriashov;
 
-import com.codeborne.selenide.conditions.Or;
 import org.junit.jupiter.api.Test;
 import ru.skillbox.kudriashov.intershopWidgetobjects.Checkout;
 import ru.skillbox.kudriashov.intershopWidgetobjects.OrderReceived;
 import ru.skillbox.kudriashov.intershopWidgetobjects.basket.Basket;
-import ru.skillbox.vinogradov.widgetobjects.ArticlesFound;
-import ru.skillbox.vinogradov.widgetobjects.Header;
-import ru.skillbox.vinogradov.widgetobjects.Menu;
-import ru.skillbox.vinogradov.widgetobjects.Registration;
-import ru.skillbox.vinogradov.widgetobjects.SearchArticle;
+import ru.skillbox.vinogradov.widgetobjects.*;
 import ru.skillbox.vinogradov.widgetobjects.basket.BasketVin;
 import ru.skillbox.vinogradov.widgetobjects.basket.Totals;
 
@@ -19,7 +14,6 @@ import java.time.format.DateTimeFormatter;
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class BuyWashingMachine {
     String username = "sel" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddHHmmss"));
